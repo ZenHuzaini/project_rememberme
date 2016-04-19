@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title><%=judul %></title>
+    <!-- BOOTSTRAP STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="/../stylesheets/css_login/logincss.css">      
+    <link rel="stylesheet" type="text/css" href="/../stylesheets/css/bootstrap.min.css">
+    <script type="text/javascript" src="/../stylesheets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/../stylesheets/js/jquery.js"></script>
+    <script type="text/javascript" src="/../stylesheets/js/jquery-2.1.4.min.js"></script>
+
+    <!-- CUSTOM STYLES -->
+    <style>
+        /* GENERAL STYLES*/
+        body {
+            background-color: #6c8ff1;
+            color: #fff;
+            padding-top: 120px;
+            font-family: Verdana;
+        }
+        /* NAV FOOTER SYLES */
+        .nav-footer {
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            bottom: 0px;
+            position: fixed;
+            margin-bottom: 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="navbar navbar-default nav-footer">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Remember Me ver. 1.0</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right  ">
+                    <li><a href="/rememberme/team">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- NAVBAR CODE END -->
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12 pad-bottom">
+                <img src="/../stylesheets/pics_login/logo.png" height="70px" width="400px">
+                <br />
+                <h5>
+                    Memories fade but words hang around forever...</h5>
+                <br />
+            </div>
+        </div>
+   
+    <table align="center">
+        <tr>
+            <form method="post" action="/rememberme/index">
+
+            <td><input class="masuk" type="text" autocomplete="off" placeholder="Username .." name="username" id="username"></td>
+            <td><input class="masuk" type="text" autocomplete="off" placeholder="id .." name="idnya" id="idnya"></td>
+            <td> <input id="tombol" type="submit" value="Login"></td>
+            </form>
+
+            <form method="get" action="/rememberme/register">
+            <td><input id="tombol" type="submit" value="Register"></td>
+            </form>
+        </tr>
+    </table>
+        <!-- ROW END -->
+    </div>
+
+</body>
+</html>

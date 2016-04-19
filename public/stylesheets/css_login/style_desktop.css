@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color:transparent;
+	font-family			:Tahoma, Geneva, sans-serif;
+	font-size			:12px;
+}
+
+#main {
+	background-image:url(../images/bg/school.png);
+	width				:1000px;
+	margin				:0 auto;
+	border				: 0px solid #000000;
+}
+
+.clear {
+	clear : both;
+	float : none;
+}
+
+#header{
+	background-color	: #000000;
+}
+
+#menu-atas{
+	background-color	:#cccccc;
+	background-image:url(../images/bg/school.png);
+	border				:0px solid #000000;
+	padding 			:11px;
+	height				:10px;
+	padding-bottom		:15px;
+}
+
+#menu-atas li {
+	display:inline;
+}
+	
+#menu-atas li a{
+	color				:#333333;
+	font-size			:13px;
+	font-weight			:bold;
+	margin-right		:20px;
+	margin-left			:5px;
+	text-decoration		:none;
+}
+
+#menu-atas li a:hover {
+	color:#2A9FAA;
+}
+
+#footer {
+	background-color:#668;
+}
+
+#menu-kiri {
+	margin 			:5px;
+	width			:150px;
+	float			:left;
+}
+
+#menu-tengah {
+	margin 			:5px;
+	width			:825px;
+	float			:left;
+}
+
+#menu-kanan {
+	margin 			:5px;
+	width			:150px;
+	float			:left;
+}
+
+#bg_menu{
+	background-color	:#CCC;
+	background-image:url(../images/menu-bwh.gif);
+	border				:0px solid #333;
+	border-bottom		:0px;
+	padding				:10px;
+	padding-left		:10px;
+	color				:#ffffff;
+	font-weight			:bold;
+	font-size			:11px;
+} 
+
+#content_menu {
+	background-color	:#eeeeee;
+	border				:0px solid #333;
+	line-height			:16px;
+	padding				:8px;
+	margin-bottom		:10px;
+	text-align:center;
+}
+#content_menu1 {
+	background-image:url(../images/bg/school.png);
+	border				:0px solid #333;
+	line-height			:16px;
+	padding				:8px;
+	margin-bottom		:10px;
+	text-align:center;
+}
+
+#content_menu a {
+	color:#006699;
+	font-size:11px;
+	text-decoration:blink;
+}
+
+#content_menu a:hover {
+	color:#500;
+}
+

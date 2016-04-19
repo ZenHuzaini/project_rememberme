@@ -1,0 +1,276 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/../stylesheets/css/bootstrap.css">
+    <% include remember_css %>  
+  <title><%=judul %></title>
+  <style type="text/css">
+    .judul{
+      text-align: center;
+      margin-top:3%;
+
+    }
+  </style>
+    <script  type="text/javascript" src="/../stylesheets/js/typeahead.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $('input.typeahead').typeahead({
+        name: 'countries',
+        remote: 'http://localhost:1996/rememberme/caridiary/?key=%QUERY',
+        limit: 10
+    });
+});
+
+
+/*
+$(document).ready(function(){
+    $('input.typeahead').typeahead({
+        name: 'formcariuser',
+        remote: 'http://localhost:1996/rememberme/cariuser/?key=%QUERY',
+        limit: 10
+    });
+}); */
+
+</script>
+
+<style type="text/css">
+.bs-example{
+  font-family: sans-serif;
+  position: relative;
+  margin: 1%;
+}
+
+body {
+  padding-bottom: 50px;
+  background-color: #6c8ff1;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 1350px 750px;
+  background-position: center; 
+
+}
+.typeahead, .tt-query, .tt-hint {
+  border: 2px solid #CCCCCC;
+  border-radius: 8px;
+  font-size: 15px;
+  height: 30px;
+  line-height: 30px;
+  outline: medium none;
+  padding: 8px 12px;
+  width: 100%;
+}
+.typeahead {
+  background-color: #FFFFFF;
+}
+.typeahead:focus {
+  border: 2% solid #0097CF;
+}
+.tt-query {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+  color: #999999;
+}
+.tt-dropdown-menu {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+  padding: 8px 0;
+  width: 100%;
+}
+.tt-suggestion {
+  font-size: 15px;
+  line-height: 24px;
+  padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+  background-color: #0097CF;
+  color: #FFFFFF;
+}
+.tt-suggestion p {
+  margin: 0;
+}
+
+
+.main-box.no-header {
+    padding-top: 20px;
+}
+.main-box {
+    background: #FFFFFF;
+    -webkit-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -moz-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -o-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -ms-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    box-shadow: 1px 1px 2px 0 #CCCCCC;
+    margin-bottom: 16px;
+    -webikt-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.table a.table-link.danger {
+    color: #e74c3c;
+}
+.label {
+    border-radius: 3px;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+.user-list tbody td .user-subhead {
+    font-size: 0.875em;
+    font-style: italic;
+}
+.user-list tbody td .user-link {
+    display: block;
+    font-size: 1.25em;
+    padding-top: 3px;
+    margin-left: 60px;
+}
+a {
+    color: #3498db;
+    outline: none!important;
+}
+.user-list tbody td>img {
+    position: relative;
+    max-width: 50px;
+    float: left;
+    margin-right: 15px;
+}
+
+.table thead tr th {
+    text-transform: uppercase;
+    font-size: 0.875em;
+}
+.table thead tr th {
+    border-bottom: 2px solid #e7ebee;
+}
+.table tbody tr td:first-child {
+    font-size: 1.125em;
+    font-weight: 300;
+}
+.table tbody tr td {
+    font-size: 0.875em;
+    vertical-align: middle;
+    border-top: 1px solid #e7ebee;
+    padding: 12px 8px;
+}
+
+</style>
+
+
+
+
+  <title><%=judul %></title>
+  <style type="text/css">
+    .judul{
+      text-align: center;
+      margin-top:3%;
+
+    }
+  </style>
+</head>
+<body>  
+ <div class="jumbotron" style="background-color:#99ccff ; " align="center">
+            <a href="/rememberme"><img src="/../stylesheets/pics_login/logo.png" height="70px" width="400px"></a>
+                <p>Memories fade but words hang around forever...</p>
+    </div>
+
+
+        <!-- NEW LAYOUT -->
+        <div class="container-fluid" style="margin-left:25%">
+  <div class="row" align="center">
+    <div class="col-md-12">
+
+      <div class="row">
+        <div class="col-md-6" >
+
+            <!--baru lagi -->
+            <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+      </div>
+        
+   
+   
+          <div class="panel panel-info" >
+            <div class="panel-heading">
+              <h3 class="panel-title">Hi <%= data[0].USERNAME_USER %>!</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="" src="/../images/user/<%= data[0].FOTO_USER %>" class="img-circle img-responsive" height="100" width="100"> </div>
+                
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>ID</td>
+                        <td><%= data[0].ID_USER %></td>
+                      </tr>
+                      <tr>
+                        <td>Nama</td>
+                        <td><%= data[0].NAMA_USER %></td>
+                      </tr>
+                      <tr>
+                        <td>Nama User</td>
+                        <td><%= data[0].USERNAME_USER %></td>
+                      </tr>
+                      <tr>
+                        <td>Alamat</td>
+                        <td><%= data[0].ALAMAT_USER %></td>
+                      </tr>
+                      <tr>
+                        <td>Nomer</td>
+                        <td><%= data[0].NOMER_USER %></td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td><%= data[0].EMAIL_USER %></td>
+                      </tr>
+                      <tr>
+                        <td>Facebook</td>
+                        <td><a href="<%= data[0].BIO_USER %>"><%= data[0].FB_USER %></td>
+                      </tr>
+                      <tr>
+                        <td>Twitter</td>
+                        <td><a href="<%= data[0].TWIT_USER %>"><%= data[0].TWIT_USER %></td>
+                      </tr>
+
+                      <tr>
+                        <td>BIO</td>
+                        <td><%= data[0].BIO_USER %></td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  
+                 
+                </div>
+              </div>
+            </div>
+                 
+          </div>
+      
+      </div>
+
+        </div>
+        <div class="col-md-3">
+        <div style="align:left">
+          <h1>Selamat Datang <small><font face="Tahoma" color="red"><%= data[0].USERNAME_USER %></font></small></h1>
+          <br />
+          <p>Sekarang kamu sudah memeiliki akun RememberMe silahkan ingat dan gunakan ID : <small><font face="Tahoma" color="red"><%= data[0].ID_USER %></font></small> dan Username : <small><font face="Tahoma" color="red"><%= data[0].USERNAME_USER %></font></small> untuk setiap kali login ! Enjoy :) ..</p>
+        </div>
+           
+          
+           <a href="/rememberme"><button type="button" class="btn btn-block btn-info" value="">Login Sekarang!</button></a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,257 @@
+<html>
+<head>
+	<link rel="stylesheet" href="/../stylesheets/css/bootstrap.css">	
+    <%= include remember_styles %>  
+	<title><%=judul %></title>
+	<style type="text/css">
+    .center {text-align: center; margin-left: auto; margin-right: auto; margin-bottom: auto; margin-top: auto;}
+
+		.judul{
+			text-align: center;
+			margin-top:1%;
+		}
+
+    body{
+      background-color: #6c8ff1;
+    }
+    
+	</style>
+
+<style type="text/css">
+#search {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    
+    -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+
+    -webkit-transform: translate(0px, -100%) scale(0, 0);
+  -moz-transform: translate(0px, -100%) scale(0, 0);
+  -o-transform: translate(0px, -100%) scale(0, 0);
+  -ms-transform: translate(0px, -100%) scale(0, 0);
+  transform: translate(0px, -100%) scale(0, 0);
+    
+    opacity: 0;
+}
+
+#search.open {
+    -webkit-transform: translate(0px, 0px) scale(1, 1);
+    -moz-transform: translate(0px, 0px) scale(1, 1);
+  -o-transform: translate(0px, 0px) scale(1, 1);
+  -ms-transform: translate(0px, 0px) scale(1, 1);
+  transform: translate(0px, 0px) scale(1, 1); 
+    opacity: 1;
+}
+#search h3 {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+#search input[type="search"] {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    border: 0px;
+    margin: 0px auto;
+    margin-top: -51px;
+    padding-left: 30px;
+    padding-right: 30px;
+    outline: none;
+}
+#search .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100px;
+    max-width: 200px;
+    margin-top: 61px;
+    margin-left: -45px;
+}
+#search .close {
+    position: fixed;
+    top: 15%;
+    right: 15px;
+    color: #fff;
+  background-color: #888;
+  border-color: #ccc;
+  opacity: 1;
+  padding: 10px 17px;
+  font-size: 27px;
+}
+
+</style>
+
+<style type="text/css">
+  
+#searchd {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    
+    -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+
+    -webkit-transform: translate(0px, -100%) scale(0, 0);
+  -moz-transform: translate(0px, -100%) scale(0, 0);
+  -o-transform: translate(0px, -100%) scale(0, 0);
+  -ms-transform: translate(0px, -100%) scale(0, 0);
+  transform: translate(0px, -100%) scale(0, 0);
+    
+    opacity: 0;
+}
+
+#searchd.open {
+    -webkit-transform: translate(0px, 0px) scale(1, 1);
+    -moz-transform: translate(0px, 0px) scale(1, 1);
+  -o-transform: translate(0px, 0px) scale(1, 1);
+  -ms-transform: translate(0px, 0px) scale(1, 1);
+  transform: translate(0px, 0px) scale(1, 1); 
+    opacity: 1;
+}
+#searchd h3 {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+#searchd input[type="search"] {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    border: 0px;
+    margin: 0px auto;
+    margin-top: -51px;
+    padding-left: 30px;
+    padding-right: 30px;
+    outline: none;
+}
+#searchd .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100px;
+    max-width: 200px;
+    margin-top: 61px;
+    margin-left: -45px;
+}
+#searchd .close {
+    position: fixed;
+    top: 15%;
+    right: 15px;
+    color: #fff;
+  background-color: #888;
+  border-color: #ccc;
+  opacity: 1;
+  padding: 10px 17px;
+  font-size: 27px;
+}
+
+</style>
+
+<script type="text/javascript">
+$(function () {
+    $('a[href="#search"]').on('click', function(event) {
+        event.preventDefault();
+        $('#search').addClass('open');
+        $('#search > form > input[type="search"]').focus();
+    });
+    
+    $('#search, #search button.close').on('click keyup', function(event) {
+        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+            $(this).removeClass('open');
+        }
+    });
+
+});
+</script>
+
+<script type="text/javascript">
+$(function () {
+    $('a[href="#searchd"]').on('click', function(event) {
+        event.preventDefault();
+        $('#searchd').addClass('open');
+        $('#searchd > form > input[type="search"]').focus();
+    });
+    
+    $('#searchd, #searchd button.close').on('click keyup', function(event) {
+        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+            $(this).removeClass('open');
+        }
+    });
+
+});
+</script>
+
+<link rel="stylesheet" href="/../stylesheets/css/bootstrap.css">  
+   <script src="/../stylesheets/js/jquery.min.js"></script>
+    <script src="/../stylesheets/js/bootstrap.min.js"></script>
+    <script src="/../stylesheets/js/scripts.js"></script>
+
+    <link href="/../stylesheets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/../stylesheets/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/../stylesheets/js/jquery-2.1.4.min.js"></script>
+<script  type="text/javascript" src="/../stylesheets/js/typeahead.min.js"></script>
+
+</head>
+<body>	
+<% include remember_header %>
+
+<div class="container" style="margin-top:2%">
+  <div class="row">
+    <div class="span12">
+      <div class="hero-unit center">
+          <h1>Pencarian tidak ditemukan! <small><font face="Tahoma" color="red">Error 404</font></small></h1>
+          <br />
+          <p>Halaman yang kamu minta tidak dapat ditemukan atau tidak dapat dimuat. Coba gunakan tombol <b>Back</b> browser dan cobalah kembali mengakses halaman yang anda ingin tuju..</p>
+          <br>
+          <p><strong>untuk penggunaan super search (berlaku juga saat membagikan diary & mencari teman), keyword harus sesuai dengan sugesti yang diberikan oleh sistem karena jika tidak, sistem akan gagal membaca pencarian.</strong> Jika anda Ingin mencari diary atau orang dengan kata yang spesifik, maka gunakan TotalSearch di menubar atas :) </p>
+          <br> 
+          <p><b>atau silahkan pilih opsi di bawah ini :</b></p>
+          <a href="/rememberme/index" class="btn btn-large btn-info"><i class="icon-home icon-white"></i> Beranda</a><span> <a href="http://www.facebook.com/zenhuzainii" class="btn btn-large btn-info"><i class="icon-home icon-white"></i> Hubungi Admin</a></span><span> <a href="/rememberme" class="btn btn-large btn-info"><i class="icon-home icon-white"></i> Login</a></span>
+        </div>
+
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form id="tf" name="tf" method="post" action="/rememberme/carifullteman">
+        <input type="search" name="cariteman" id="cariteman" value="" placeholder="Temukan Temanmu!" />
+        <button type="submit" class="btn btn-success">Temukan Sekarang!</button>
+    </form>
+</div>
+
+<div id="searchd">
+<button type="button" class="close">×</button>
+    <form id="tf" name="tf" method="post" action="/rememberme/carifulldiary">
+        <input type="search" name="caridiary" id="caridiary" value="" placeholder="Temukan Diarimu!" />
+        <button type="submit" class="btn btn-success">Temukan Sekarang!</button>
+    </form>
+</div>
+</body>
+</html>
+

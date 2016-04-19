@@ -1,0 +1,125 @@
+<html>
+<head>
+	<link rel="stylesheet" href="/../stylesheets/css/bootstrap.css">
+    <% include remember_css %>	
+    <%= include remember_styles %>
+	<title><%=judul %></title>
+	<style type="text/css">
+		.judul{
+			text-align: center;
+			margin-top:3%;
+
+		}
+	</style>
+    <script  type="text/javascript" src="/../stylesheets/js/typeahead.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $('input.typeahead').typeahead({
+        name: 'countries',
+        remote: 'http://localhost:1996/rememberme/caridiary/?key=%QUERY',
+        limit: 10
+    });
+});
+
+
+/*
+$(document).ready(function(){
+    $('input.typeahead').typeahead({
+        name: 'formcariuser',
+        remote: 'http://localhost:1996/rememberme/cariuser/?key=%QUERY',
+        limit: 10
+    });
+}); */
+
+</script>
+
+<style type="text/css">
+.bs-example{
+  font-family: sans-serif;
+  position: relative;
+  margin: 1%;
+}
+
+body {
+  padding-bottom: 50px;
+  background-image: url("../images/Flat-Wallpaper-Design-Image-B52.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 1350px 750px;
+  background-position: center; 
+
+}
+.typeahead, .tt-query, .tt-hint {
+  border: 2px solid #CCCCCC;
+  border-radius: 8px;
+  font-size: 15px;
+  height: 30px;
+  line-height: 30px;
+  outline: medium none;
+  padding: 8px 12px;
+  width: 100%;
+}
+.typeahead {
+  background-color: #FFFFFF;
+}
+.typeahead:focus {
+  border: 2% solid #0097CF;
+}
+.tt-query {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+  color: #999999;
+}
+.tt-dropdown-menu {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+  padding: 8px 0;
+  width: 100%;
+}
+.tt-suggestion {
+  font-size: 15px;
+  line-height: 24px;
+  padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+  background-color: #0097CF;
+  color: #FFFFFF;
+}
+.tt-suggestion p {
+  margin: 0;
+}
+</style>
+
+
+  <title><%=judul %></title>
+  <style type="text/css">
+    .judul{
+      text-align: center;
+      margin-top:3%;
+
+    }
+  </style>
+</head>
+<body>	
+<% include remember_header %>
+
+        
+
+	<div class="container">
+<img src="/../images/catatanku.png" height="35px" width="200px">
+<a class="btn btn-danger" href="/rememberme/tulisdiary">Tulis Diary Baru</a>
+	<div style="width:70%">    
+            <%= include remember_listdiary_shared_em %>
+        </div>
+</div>
+
+<%= include remember_styles_cari %>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="/../stylesheets/ckeditor_full/ckeditor.js"></script>
+<script type="text/javascript" src="ckeditor_full/style.js"></script>
+	<title></title>
+<head>
+	<link rel="stylesheet" href="/../stylesheets/css/bootstrap.css">	
+	<title><%=judul%></title>
+	<style type="text/css">
+		.judul{
+			text-align: center;
+			margin-top:3%;
+
+		}
+	</style>
+</head>
+<body>	
+<% include remember_header %>
+    
+<div class="container">
+	<h1>Tulis Diary</h1>
+	<form action="/rememberme/tulisdiary" method="post">
+	<div class="form-group">
+		<input type="hidden" name = "theid" id = "theid" value="<%= idnya %>">
+	</div>
+	<div class="form-group">
+	<label for="judul">Tanggal</label>
+		<input type="date" class="form-control" name="tanggal">
+	</div>
+	<div class="form-group">
+		<label for="judul">Judul</label>
+		<input type="text" class="form-control" name="judul">
+	</div>
+
+	<div class="form-group">
+		<label for="judul">Mood</label>
+		<select class="form-control" name="mood">
+			<option>Pilih Moodmu</option>
+			<option value="Bahagia">Bahagia</option>
+			<option value="Senang">Senang</option>
+			<option value="Sedih">Sedih</option>
+			<option value="Galau">Galau</option>
+			<option value="Hancur">Hancur</option>
+		</select>
+
+		
+	</div>
+	<div class="form-group">
+		<label for="diary">Diary</label>
+		<textarea name="diary" class="ckeditor"></textarea>		
+	</div>
+	<div class="form-group">
+		<label></label>
+		<input type="submit" class="btn btn-info" value="Simpan">
+	</div>
+	</form>
+</div>
+</body>
+</html>
+

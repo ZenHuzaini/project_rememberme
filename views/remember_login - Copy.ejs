@@ -1,0 +1,38 @@
+<html>
+<title><%=judul %></title>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/../stylesheets/css_login/logincss.css">      
+        <link rel="stylesheet" type="text/css" href="/../stylesheets/css/bootstrap.min.css">
+    <script type="text/javascript" src="/../stylesheets/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="/../stylesheets/js/jquery.js"></script>
+     <script type="text/javascript" src="/../stylesheets/js/jquery-2.1.4.min.js"></script>
+
+    
+
+    </head>
+    <body>
+    <div class="container">
+    <div class="jumbotron" style="background-color:#99ccff" align="center">
+            <img src="/../stylesheets/pics_login/logo.png" height="70px" width="400px">
+                <p>write and remember what happened to you</p>
+                </div>
+    </div>
+
+   
+    <table align="center">
+        <tr>
+            <form method="get" action="/rememberme/index/">
+
+            <td><input class="masuk" type="text" autocomplete="off" placeholder="Username .." name="username"></td>
+            <td><input class="masuk" type="password" autocomplete="off" placeholder="Password .." name="password"></td>
+            <td> <input id="tombol" type="submit" value="Login"></td>
+            </form>
+
+            <form method="get" action="/rememberme/register">
+            <td><input id="tombol" type="submit" value="Register"></td>
+            </form>
+        </tr>
+    </table>
+
+    </body>
+</html>

@@ -1,0 +1,161 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/../stylesheets/css/bootstrap.css">  
+  <title><%=judul %></title>
+  <style type="text/css">
+    .judul{
+      text-align: center;
+      margin-top:3%;
+    }
+  </style>
+<link rel="stylesheet" href="/../stylesheets/css/bootstrap.css">  
+   <script src="/../stylesheets/js/jquery.min.js"></script>
+    <script src="/../stylesheets/js/bootstrap.min.js"></script>
+    <script src="/../stylesheets/js/scripts.js"></script>
+
+    <link href="/../stylesheets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/../stylesheets/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/../stylesheets/js/jquery-2.1.4.min.js"></script>
+<script  type="text/javascript" src="/../stylesheets/js/typeahead.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('input.typeahead').typeahead({
+        name: 'countries',
+        remote: 'http://localhost:1996/rememberme/bagidiary/?key=%QUERY',
+        limit: 10
+    });
+});
+</script>
+<style type="text/css">
+.bs-example{
+  font-family: sans-serif;
+  position: relative;
+  margin: 1%;
+}
+
+
+body {
+  padding-bottom: 50px;
+  background-image: url("../images/Flat-Wallpaper-Design-Image-B52.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 1350px 750px;
+  background-position: center; 
+
+}
+.typeahead, .tt-query, .tt-hint {
+  border: 2px solid #CCCCCC;
+  border-radius: 8px;
+  font-size: 15px;
+  height: 30px;
+  line-height: 30px;
+  outline: medium none;
+  padding: 8px 12px;
+  width: 100%;
+}
+.typeahead {
+  background-color: #FFFFFF;
+}
+.typeahead:focus {
+  border: 2% solid #0097CF;
+}
+.tt-query {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+  color: #999999;
+}
+.tt-dropdown-menu {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+  padding: 8px 0;
+  width: 100%;
+}
+.tt-suggestion {
+  font-size: 15px;
+  line-height: 24px;
+  padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+  background-color: #0097CF;
+  color: #FFFFFF;
+}
+.tt-suggestion p {
+  margin: 0;
+}
+</style>
+</head>
+<body>  
+<% include remember_header %>
+  <div class="container">
+      <div class="container">
+      <div class="row">
+        <div class="col-sm-3" align="center" >
+        <img src="/../images/user/<%= data[0].FOTO_USER %>" class="img-circle" alt="Cinque Terre" width="200" height="200" >
+        
+             <blockquote>
+    <h4 style="color:black"><span class="glyphicon glyphicon-user"></span> <%= data[0].NAMA_USER %></h4>
+    <p style="color:black"><%= data[0].BIO_USER %></p>
+    <footer><a href=""><%= data[0].USERNAME_USER %> </a></footer>
+  </blockquote> 
+
+
+</div>
+
+<div class="col-sm-9">
+        <div align="left" style="margin-bottom:1%"><img src="/../images/catatanku.png" height="35px" width="200px"></div>
+
+
+          <div class="container" style="width:100%" >
+          <div class="panel panel-default" style="opacity: 0.9;">
+    <div class="panel-heading">
+      <table>
+             
+            <tr>
+                <td><h2><%=data[0].JUDUL_STORY %></h2></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>           
+            <tr>
+                <td><h4><span class="glyphicon glyphicon-time"></span><%=data[0].TANGGAL_STORY%></h4>
+                </td>
+            </tr>
+            <tr>
+                 <td><span class="glyphicon glyphicon-user"><%=data[0].ID_USER %></span> 
+            <span class="glyphicon glyphicon-book" ><%=data[0].ID_STORY %></span>
+            <span class="label label-success"><%=data[0].MOOD_KATEGORI_STORY%></span> </h5>    
+                 </td>
+            </tr>
+            <tr>
+                <td><hr/></td>
+            </tr>
+            </table>
+    
+
+    </div>
+    <div class="panel-body"><h4><%-data[0].STORY_STORY%></h4></div>
+  </div>
+  </div>
+</div>
+
+        
+
+  </div>
+        </div>
+
+        
+        </div>
+
+
+  </div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+
+ <!--   <form class="navbar-form navbar-right" role="search" method="get" action="/rememberme/carikandiary" >
+            <div class="form-group input-group">
+              <input type="text" class="form-control" placeholder="Cari Diary">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>        
+            </div>
+          </form>
+-->
+         
+    <form class="navbar-form navbar-right" role="search" method="post" action="/rememberme/carikandiary" >
+            <div class="form-group input-group">
+               <div class="bs-example">
+                 <input type="text" name="formcaridiary" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="cari diary.."></div>  
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>      
+            </div>
+          </form>  
+        
+
+          <% if(data.length){ 
+                 for(var i = 0;i < data.length;i++) { %>
+
+          <div class="row">
+            <div class="col-sm-12">
+                    <div class="message-item" id="m9">
+                        <div class="message-inner">
+                            <div class="message-head clearfix">
+                                <div class="user-detail" style="color:#809fff">
+                                     <h5><%=data[i].KOLHELP_SHARE %></h5>   
+                                    <div class="post-meta">
+                                                <span class="glyphicon glyphicon-user" style="color : #809fff "></span> <span class="qa-message-when-data"><%=data[i].ID_USER%></span><input type="hidden" name="theidnya" value="<%=data[i].ID_USER%>">
+                                                <span class="glyphicon glyphicon-share" style="color : #809fff "></span> <span class="qa-message-when-data"><%=data[i].USERNAME_TEMAN_SHARE%></span>
+                                          <span> ... <a href="/rememberme/bacadiary/<%=data[i].ID_STORY%>">
+                                <span style="color : #ff4d4d" class="glyphicon glyphicon-book"></span>
+                                </a></span><span><a href="/rememberme/delete_shared/<%=data[i].ID_STORY%>/<%=data[i].USERNAME_TEMAN_SHARE%>">
+                                <span style="color : #ff4d4d" class="glyphicon glyphicon-trash"></span>
+                                </a></span>
+                                        </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+            </div>
+    </div>
+
+        <% }
+            }else{ %>
+
+                <p>Tidak ada Catatan!!!<p>
+
+            <% } %>
+
+      <div align="center"><a href="/rememberme/lihatdiary"><button type="button" class="btn btn-warning btn-lg" align="center">Lihat Semua Diary</button></a></div>

@@ -1,0 +1,72 @@
+body{
+    background-color: #7aa3cc;
+}
+#kotak{
+    width: 450px;
+    height: 250px;
+    margin-left: 38%;
+    margin-top: 3%;
+    color:#2A0000;
+}
+#atas{
+    margin-top: 100px;
+    height: 35px;
+    width: 450px;
+    text-align: center;
+    font-size: 15pt;
+    margin-left: 33%;
+    padding-top:20px;
+
+}
+#bawah{
+    height: 200px;
+    width: 200px;
+    
+}
+.masuk{
+    width: 200px;
+    height:40px;
+    margin-top:10px;
+    margin-left: 60px;
+    font-size: 12pt;
+    border: 1px solid #00DFFF;
+    padding-left:10px;
+    color:#00DFFF;
+}
+.masuk:focus{
+    width: 200px;
+    height:40px;
+    margin-top:10px;
+    margin-left: 60px;
+    font-size: 12pt;
+    padding-left:10px;
+    color:#00DFFF;
+    outline: none;
+    box-shadow: 0 0 5px #2ECC71;
+}
+ 
+#tombol{
+    width: 200px;
+    height:40px;
+    margin-top:10px;
+    margin-left: 60px;
+    background: #00DFFF;
+    border:none;
+    color:#fff;
+    font-size: 14pt;
+    outline:none;
+}
+
+.tombol1{
+    width: 200px;
+    height:40px;
+    margin-top:10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    background: cyan;
+    value : "register";
+    border:none;
+    color:black;
+    font-size: 14pt;
+    outline:none;
+}

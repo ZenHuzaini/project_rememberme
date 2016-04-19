@@ -1,0 +1,418 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/../stylesheets/css/bootstrap.css">
+    <% include remember_css %>  
+  <title><%=judul %></title>
+  <style type="text/css">
+    .judul{
+      text-align: center;
+      margin-top:3%;
+
+    }
+  </style>
+    <script  type="text/javascript" src="/../stylesheets/js/typeahead.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $('input.typeahead').typeahead({
+        name: 'countries',
+        remote: 'http://localhost:1996/rememberme/caridiary/?key=%QUERY',
+        limit: 10
+    });
+});
+
+
+/*
+$(document).ready(function(){
+    $('input.typeahead').typeahead({
+        name: 'formcariuser',
+        remote: 'http://localhost:1996/rememberme/cariuser/?key=%QUERY',
+        limit: 10
+    });
+}); */
+
+</script>
+
+<style type="text/css">
+.bs-example{
+  font-family: sans-serif;
+  position: relative;
+  margin: 1%;
+}
+
+body {
+  padding-bottom: 50px;
+  background-image: url("../images/Flat-Wallpaper-Design-Image-B52.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 1350px 750px;
+  background-position: center; 
+
+}
+.typeahead, .tt-query, .tt-hint {
+  border: 2px solid #CCCCCC;
+  border-radius: 8px;
+  font-size: 15px;
+  height: 30px;
+  line-height: 30px;
+  outline: medium none;
+  padding: 8px 12px;
+  width: 100%;
+}
+.typeahead {
+  background-color: #FFFFFF;
+}
+.typeahead:focus {
+  border: 2% solid #0097CF;
+}
+.tt-query {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+  color: #999999;
+}
+.tt-dropdown-menu {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+  padding: 8px 0;
+  width: 100%;
+}
+.tt-suggestion {
+  font-size: 15px;
+  line-height: 24px;
+  padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+  background-color: #0097CF;
+  color: #FFFFFF;
+}
+.tt-suggestion p {
+  margin: 0;
+}
+
+
+.main-box.no-header {
+    padding-top: 20px;
+}
+.main-box {
+    background: #FFFFFF;
+    -webkit-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -moz-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -o-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -ms-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    box-shadow: 1px 1px 2px 0 #CCCCCC;
+    margin-bottom: 16px;
+    -webikt-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.table a.table-link.danger {
+    color: #e74c3c;
+}
+.label {
+    border-radius: 3px;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+.user-list tbody td .user-subhead {
+    font-size: 0.875em;
+    font-style: italic;
+}
+.user-list tbody td .user-link {
+    display: block;
+    font-size: 1.25em;
+    padding-top: 3px;
+    margin-left: 60px;
+}
+a {
+    color: #3498db;
+    outline: none!important;
+}
+.user-list tbody td>img {
+    position: relative;
+    max-width: 50px;
+    float: left;
+    margin-right: 15px;
+}
+
+.table thead tr th {
+    text-transform: uppercase;
+    font-size: 0.875em;
+}
+.table thead tr th {
+    border-bottom: 2px solid #e7ebee;
+}
+.table tbody tr td:first-child {
+    font-size: 1.125em;
+    font-weight: 300;
+}
+.table tbody tr td {
+    font-size: 0.875em;
+    vertical-align: middle;
+    border-top: 1px solid #e7ebee;
+    padding: 12px 8px;
+}
+
+</style>
+
+
+
+
+  <title><%=judul %></title>
+  <style type="text/css">
+    .judul{
+      text-align: center;
+      margin-top:3%;
+
+    }
+  </style>
+</head>
+<body>  
+<% include remember_header %>
+
+        
+
+  <div class="container">
+<img src="/../images/catatanku.png" height="35px" width="200px">
+<a class="btn btn-danger" href="/rememberme/tulisdiary">Tulis Diary Baru</a>
+  <div style="width:70%">    
+            
+                 
+    <form class="navbar-form navbar-right" role="search" method="post" action="/rememberme/carikandiary/:judul" >
+            <div class="form-group input-group">
+               <div class="bs-example">
+                 <input type="text" name="formcaridiary" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="cari diary.."></div>  
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>      
+            </div>
+          </form>  
+        
+
+          <% if(data.length){ 
+                 for(var i = 0;i < data.length;i++) { %>
+
+          <div class="row">
+            <div class="col-sm-12">
+                    <div class="message-item" id="m9">
+                     
+                            <div class="message-head clearfix">
+                                <div class="user-detail" style="color:#809fff">
+                                     <h5><%=data[i].KOLHELP_CONTACT %></h5>   
+                                    <span> ... <a href="/rememberme/bacadiary/<%=data[i].ID_STORY%>">
+                                <span style="color : #ff4d4d" class="glyphicon glyphicon-book"></span>
+                                </a></span>
+                                <span>  <a href="/rememberme/hapusdiary/<%=data[i].ID_STORY%>">
+                                <span style="color : #ff4d4d" class="glyphicon glyphicon-trash"></span>
+                                </a></span>
+                                </div>
+                            </div>
+                        
+                    </div>
+            </div>
+    </div>
+
+        <% }
+            }else{ %>
+
+                <p>Tidak ada Catatan!!!<p>
+
+            <% } %>
+
+
+
+        </div>
+</div>
+ <% if(data.length){ 
+                 for(var i = 0;i < data.length;i++) { %>
+
+                 <!-- BARU -->
+<div class="container">
+    <div class="span3 well">
+        <center>
+        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="/../images/13001.jpg" name="aboutme" width="140" height="140" class="img-circle"></a>
+        <h3><%=data[i].KOLHELP_CONTACT %></h3>
+        <em>click my face for more</em>
+    </center>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel">More About <%=data[i].KOLHELP_CONTACT %></h4>
+                    </div>
+                <div class="modal-body">
+                    <center>
+                    <img src="/../images/13001.jpg" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                    <h3 class="media-heading"><%=data[i].KOLHELP_CONTACT %></h3>
+                    <span><strong>Skills: </strong></span>
+                        <span class="label label-warning">HTML5/CSS</span>
+                        <span class="label label-info">Adobe CS 5.5</span>
+                        <span class="label label-info">Microsoft Office</span>
+                        <span class="label label-success">Windows XP, Vista, 7</span>
+                    </center>
+                    <hr>
+                    <center>
+                    <p class="text-left"><strong>Bio: </strong><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
+                    <br>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about <%=data[i].KOLHELP_CONTACT %></button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <% }
+            }else{ %>
+
+                <p>Tidak ada Catatan!!!<p>
+
+            <% } %>
+
+<!-- BARU -->
+<div class="container">
+      <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+           <A href="edit.html" >Edit Profile</A>
+
+        <A href="edit.html" >Logout</A>
+       <br>
+<p class=" text-info">May 05,2014,03:00 pm </p>
+      </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+   
+   
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Sheena Kristin A.Eschor</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+                
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Department:</td>
+                        <td>Programming</td>
+                      </tr>
+                      <tr>
+                        <td>Hire date:</td>
+                        <td>06/23/2013</td>
+                      </tr>
+                      <tr>
+                        <td>Date of Birth</td>
+                        <td>01/24/1988</td>
+                      </tr>
+                   
+                         <tr>
+                             <tr>
+                        <td>Gender</td>
+                        <td>Male</td>
+                      </tr>
+                        <tr>
+                        <td>Home Address</td>
+                        <td>Metro Manila,Philippines</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td><a href="mailto:info@support.com">info@support.com</a></td>
+                      </tr>
+                        <td>Phone Number</td>
+                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+                        </td>
+                           
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  
+                  <a href="#" class="btn btn-primary">My Sales Performance</a>
+                  <a href="#" class="btn btn-primary">Team Sales Performance</a>
+                </div>
+              </div>
+            </div>
+                 <div class="panel-footer">
+                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                        <span class="pull-right">
+                            <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                        </span>
+                    </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- BARU -->
+<div align="center">
+<div class="container bootstrap snippet" align="center">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>Username</span></th>
+                                <th><span>Created</span></th>
+                                <th class="text-center"><span>Status</span></th>
+                                <th><span>Email</span></th>
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="http://bootdey.com/img/Content/user_1.jpg" alt="">
+                                        <a href="#" class="user-link">Full name 1</a>
+                                        <span class="user-subhead">Member</span>
+                                    </td>
+                                    <td>2013/08/12</td>
+                                    <td class="text-center">
+                                        <span class="label label-default">pending</span>
+                                    </td>
+                                    <td>
+                                        <a href="#">marlon@brando.com</a>
+                                    </td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
+
